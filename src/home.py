@@ -1,4 +1,3 @@
-# home.py
 from dash import html, dcc, Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
@@ -81,6 +80,15 @@ home_layout = html.Div([
                 ], width=3),
             ], className="mb-4"),
             
+            # Key Stats Row
+            dbc.Row([
+                dbc.Col(html.Div(id='total-concerts', className='key-stat'), width=2),
+                dbc.Col(html.Div(id='countries-visited', className='key-stat'), width=2),
+                dbc.Col(html.Div(id='unique-songs', className='key-stat'), width=2),
+                dbc.Col(html.Div(id='total-attendance', className='key-stat'), width=3),
+                dbc.Col(html.Div(id='gross-revenue', className='key-stat'), width=3),
+            ], className="mb-4", justify="center"),
+            
             # Charts row
             dbc.Row([
                 # Most Played Songs chart
@@ -157,7 +165,12 @@ def register_home_callbacks(app):
     @app.callback(
         [Output('most-played-songs-chart', 'figure'),
          Output('most-visited-cities-chart', 'figure'),
-         Output('venue-capacity-scatter', 'figure')],
+         Output('venue-capacity-scatter', 'figure'),
+         Output('total-concerts', 'children'),
+         Output('countries-visited', 'children'),
+         Output('unique-songs', 'children'),
+         Output('total-attendance', 'children'),
+         Output('gross-revenue', 'children')],
         [Input('year-range', 'value'),
          Input('tour-dropdown', 'value'),
          Input('country-dropdown', 'value'),
@@ -291,4 +304,37 @@ def register_home_callbacks(app):
             gridcolor='rgba(255,255,255,0.1)'
         )
         
-        return songs_fig, cities_fig, capacity_fig
+        # Calculate key stats
+        total_concerts = len(filtered_df)
+        countries_visited = filtered_df['country'].nunique()
+        unique_songs = len(set(song_counts['Song']))
+        total_attendance = filtered_df['venue_capacity'].sum()
+        gross_revenue = (filtered_df['venue_capacity'] * filtered_df['avg_price']).sum()
+        
+        # Format key stats
+        total_concerts_html = html.Div([
+            html.H4("Total Concerts"),
+            html.P(f"{total_concerts:,}")
+        ])
+        
+        countries_visited_html = html.Div([
+            html.H4("Countries Visited"),
+            html.P(f"{countries_visited:,}")
+        ])
+        
+        unique_songs_html = html.Div([
+            html.H4("Unique Songs"),
+            html.P(f"{unique_songs:,}")
+        ])
+        
+        total_attendance_html = html.Div([
+            html.H4("Est. Total Attendance"),
+            html.P(f"{total_attendance:,.0f}")
+        ])
+        
+        gross_revenue_html = html.Div([
+            html.H4("Est. Gross Revenue"),
+            html.P(f"${gross_revenue:,.0f}")
+        ])
+        
+        return songs_fig, cities_fig, capacity_fig, total_concerts_html, countries_visited_html, unique_songs_html, total_attendance_html, gross_revenue_html
