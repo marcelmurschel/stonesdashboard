@@ -1,0 +1,80 @@
+{
+  "eyebrow": "Hype-Kurve",
+  "title": [
+    "Was ein Video",
+    "auslösen kann"
+  ],
+  "subtitle": "BGG-Seitenaufrufe pro Tag · Am goldenen Fluss",
+  "points": [
+    {
+      "label": "07.09.",
+      "value": 410
+    },
+    {
+      "label": "08.09.",
+      "value": 395
+    },
+    {
+      "label": "09.09.",
+      "value": 420
+    },
+    {
+      "label": "10.09.",
+      "value": 405
+    },
+    {
+      "label": "11.09.",
+      "value": 432
+    },
+    {
+      "label": "12.09.",
+      "value": 455
+    },
+    {
+      "label": "13.09.",
+      "value": 612
+    },
+    {
+      "label": "14.09.",
+      "value": 870
+    },
+    {
+      "label": "15.09.",
+      "value": 910
+    },
+    {
+      "label": "16.09.",
+      "value": 780
+    },
+    {
+      "label": "17.09.",
+      "value": 690
+    },
+    {
+      "label": "18.09.",
+      "value": 718
+    },
+    {
+      "label": "19.09.",
+      "value": 802
+    },
+    {
+      "label": "20.09.",
+      "value": 764
+    }
+  ],
+  "events": [
+    {
+      "index": 6,
+      "label": "Video: Spielbrett Stories"
+    },
+    {
+      "index": 12,
+      "label": "SPIEL-Vorschau"
+    }
+  ],
+  "callout": "+43 % in 48 h",
+  "calloutIndex": 8,
+  "takeaway": "Ein Creator-Video, drei Tage Hype – und das Niveau bleibt danach höher.",
+  "source": "BoardGameGeek · Influencer Monitor · Beispieldaten"
+}

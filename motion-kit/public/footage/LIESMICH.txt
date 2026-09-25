@@ -1,0 +1,2 @@
+Hier kommen deine Talking-Head-Clips hinein (z. B. kw39.mp4).
+Im Drehbuch (data/episode-*.json) als "footage": "footage/kw39.mp4" eintragen.

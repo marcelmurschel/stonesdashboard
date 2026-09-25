@@ -1,0 +1,70 @@
+{
+  "eyebrow": "Creator-Charts · KW 38",
+  "title": [
+    "Was Creator",
+    "gerade spielen"
+  ],
+  "entries": [
+    {
+      "title": "Sky Team",
+      "publisher": "KOSMOS",
+      "mentions": 41,
+      "delta": 12,
+      "move": 2,
+      "isNew": false,
+      "recommend": 86,
+      "note": "Liebling der 2-Personen-Listen",
+      "cover": "",
+      "color": ""
+    },
+    {
+      "title": "Harmonies",
+      "publisher": "Libellud · Asmodee",
+      "mentions": 36,
+      "delta": 4,
+      "move": -1,
+      "isNew": false,
+      "recommend": 81,
+      "note": "Das Einstiegsspiel des Herbsts",
+      "cover": "",
+      "color": ""
+    },
+    {
+      "title": "Am goldenen Fluss",
+      "publisher": "KOSMOS",
+      "mentions": 23,
+      "delta": 9,
+      "move": 0,
+      "isNew": true,
+      "recommend": 78,
+      "note": "In 9 SPIEL-Vorfreude-Listen",
+      "cover": "",
+      "color": ""
+    },
+    {
+      "title": "Ark Nova",
+      "publisher": "Feuerland",
+      "mentions": 19,
+      "delta": -3,
+      "move": -1,
+      "isNew": false,
+      "recommend": 88,
+      "note": "Dauerbrenner der Vielspieler",
+      "cover": "",
+      "color": ""
+    },
+    {
+      "title": "Cascadia",
+      "publisher": "KOSMOS",
+      "mentions": 17,
+      "delta": 2,
+      "move": 0,
+      "isNew": false,
+      "recommend": 74,
+      "note": "Comeback durch Herbst-Listen",
+      "cover": "",
+      "color": ""
+    }
+  ],
+  "source": "Influencer Monitor · 236 Kanäle · Beispieldaten"
+}

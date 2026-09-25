@@ -1,0 +1,2 @@
+Cover-Bilder der Spiele (Pressebilder der Verlage), z. B. sky-team.jpg.
+Im Datensatz als "cover": "covers/sky-team.jpg" eintragen.

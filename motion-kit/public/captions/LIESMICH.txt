@@ -1,0 +1,2 @@
+SRT-Untertitel (z. B. aus CapCut exportiert), z. B. kw39.srt.
+In der Vorlage Untertitel als "srtFile": "captions/kw39.srt" eintragen.

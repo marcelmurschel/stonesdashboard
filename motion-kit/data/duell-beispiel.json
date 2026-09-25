@@ -1,0 +1,51 @@
+{
+  "eyebrow": "Duell · Creator-Urteil",
+  "title": [
+    "Wer gewinnt",
+    "bei den Creators?"
+  ],
+  "left": {
+    "title": "Harmonies",
+    "publisher": "Libellud · Asmodee",
+    "cover": "",
+    "color": ""
+  },
+  "right": {
+    "title": "Cascadia",
+    "publisher": "KOSMOS",
+    "cover": "",
+    "color": ""
+  },
+  "metrics": [
+    {
+      "label": "Erwähnungen",
+      "left": 42,
+      "right": 35,
+      "format": "int",
+      "higherIsBetter": true
+    },
+    {
+      "label": "Ø Stimmung",
+      "left": 0.61,
+      "right": 0.48,
+      "format": "sent",
+      "higherIsBetter": true
+    },
+    {
+      "label": "Empfehlung",
+      "left": 81,
+      "right": 74,
+      "format": "pct",
+      "higherIsBetter": true
+    },
+    {
+      "label": "Reichweite",
+      "left": 2.1,
+      "right": 2.6,
+      "format": "mio",
+      "higherIsBetter": true
+    }
+  ],
+  "verdict": "*Harmonies* gewinnt 3 : 1",
+  "source": "Influencer Monitor · KW 31–38 · Beispieldaten"
+}

@@ -1,0 +1,223 @@
+{
+  "_hinweis": "Drehbuch einer Folge. Szenen-Typen: intro, talk, charts, stat, trend, versus, outro. Fehlende Felder kommen aus den *-beispiel.json-Dateien.",
+  "footage": "",
+  "captions": [],
+  "scenes": [
+    {
+      "type": "intro"
+    },
+    {
+      "type": "talk",
+      "seconds": 8,
+      "hook": {},
+      "lowerThird": true,
+      "captions": [
+        {
+          "text": "Diese",
+          "startMs": 0,
+          "endMs": 300,
+          "timestampMs": 150,
+          "confidence": 1
+        },
+        {
+          "text": "fünf",
+          "startMs": 300,
+          "endMs": 560,
+          "timestampMs": 430,
+          "confidence": 1
+        },
+        {
+          "text": "Spiele",
+          "startMs": 560,
+          "endMs": 950,
+          "timestampMs": 755,
+          "confidence": 1
+        },
+        {
+          "text": "spielt",
+          "startMs": 950,
+          "endMs": 1260,
+          "timestampMs": 1105,
+          "confidence": 1
+        },
+        {
+          "text": "gerade",
+          "startMs": 1260,
+          "endMs": 1600,
+          "timestampMs": 1430,
+          "confidence": 1
+        },
+        {
+          "text": "jeder",
+          "startMs": 1600,
+          "endMs": 1900,
+          "timestampMs": 1750,
+          "confidence": 1
+        },
+        {
+          "text": "Creator.",
+          "startMs": 1900,
+          "endMs": 2450,
+          "timestampMs": 2175,
+          "confidence": 1
+        },
+        {
+          "text": "Ich",
+          "startMs": 2750,
+          "endMs": 2900,
+          "timestampMs": 2825,
+          "confidence": 1
+        },
+        {
+          "text": "habe",
+          "startMs": 2900,
+          "endMs": 3080,
+          "timestampMs": 2990,
+          "confidence": 1
+        },
+        {
+          "text": "236",
+          "startMs": 3080,
+          "endMs": 3800,
+          "timestampMs": 3440,
+          "confidence": 1
+        },
+        {
+          "text": "Kanäle",
+          "startMs": 3800,
+          "endMs": 4200,
+          "timestampMs": 4000,
+          "confidence": 1
+        },
+        {
+          "text": "ausgewertet",
+          "startMs": 4200,
+          "endMs": 4850,
+          "timestampMs": 4525,
+          "confidence": 1,
+          "pageBreakAfter": true
+        },
+        {
+          "text": "und",
+          "startMs": 4900,
+          "endMs": 5100,
+          "timestampMs": 5000,
+          "confidence": 1
+        },
+        {
+          "text": "Platz",
+          "startMs": 5100,
+          "endMs": 5420,
+          "timestampMs": 5260,
+          "confidence": 1
+        },
+        {
+          "text": "eins",
+          "startMs": 5420,
+          "endMs": 5720,
+          "timestampMs": 5570,
+          "confidence": 1
+        },
+        {
+          "text": "hat",
+          "startMs": 5720,
+          "endMs": 5860,
+          "timestampMs": 5790,
+          "confidence": 1
+        },
+        {
+          "text": "mich",
+          "startMs": 5860,
+          "endMs": 6060,
+          "timestampMs": 5960,
+          "confidence": 1
+        },
+        {
+          "text": "überrascht.",
+          "startMs": 6060,
+          "endMs": 6800,
+          "timestampMs": 6430,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "type": "charts"
+    },
+    {
+      "type": "talk",
+      "seconds": 4,
+      "captions": [
+        {
+          "text": "Und",
+          "startMs": 0,
+          "endMs": 200,
+          "timestampMs": 100,
+          "confidence": 1
+        },
+        {
+          "text": "jetzt",
+          "startMs": 200,
+          "endMs": 450,
+          "timestampMs": 325,
+          "confidence": 1
+        },
+        {
+          "text": "der",
+          "startMs": 450,
+          "endMs": 600,
+          "timestampMs": 525,
+          "confidence": 1
+        },
+        {
+          "text": "Datenpunkt,",
+          "startMs": 600,
+          "endMs": 1250,
+          "timestampMs": 925,
+          "confidence": 1
+        },
+        {
+          "text": "der",
+          "startMs": 1400,
+          "endMs": 1550,
+          "timestampMs": 1475,
+          "confidence": 1
+        },
+        {
+          "text": "mich",
+          "startMs": 1550,
+          "endMs": 1750,
+          "timestampMs": 1650,
+          "confidence": 1
+        },
+        {
+          "text": "wirklich",
+          "startMs": 1750,
+          "endMs": 2100,
+          "timestampMs": 1925,
+          "confidence": 1
+        },
+        {
+          "text": "überrascht",
+          "startMs": 2100,
+          "endMs": 2700,
+          "timestampMs": 2400,
+          "confidence": 1
+        },
+        {
+          "text": "hat.",
+          "startMs": 2700,
+          "endMs": 3000,
+          "timestampMs": 2850,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "type": "stat"
+    },
+    {
+      "type": "outro"
+    }
+  ]
+}

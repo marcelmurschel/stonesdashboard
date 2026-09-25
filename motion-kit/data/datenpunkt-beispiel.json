@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Datenpunkt",
+  "question": [
+    "Wie viele Deutsche",
+    "spielen *häufig*",
+    "Brettspiele?"
+  ],
+  "value": "7,8 %",
+  "valueNote": "5,54 Mio.",
+  "valueSub": "Menschen ab 14",
+  "segments": [
+    {
+      "label": "Häufig",
+      "share": 7.8,
+      "note": "5,54 Mio.",
+      "tone": "highlight"
+    },
+    {
+      "label": "Ab und zu",
+      "share": 47.0,
+      "note": "33,40 Mio.",
+      "tone": "primary"
+    },
+    {
+      "label": "Nie",
+      "share": 45.2,
+      "note": "ca. 32,1 Mio.",
+      "tone": "muted"
+    }
+  ],
+  "takeaway": "Seit 2014 fast unverändert: Der Boom ist ein Umsatz-Boom, kein Spieler-Boom.",
+  "source": "IfD Allensbach · AWA 2025"
+}
