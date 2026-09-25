@@ -52,7 +52,8 @@ npm run studio        # öffnet die Vorschau im Browser (localhost:3000)
 ```
 
 Im Studio siehst du links alle Vorlagen, rechts kannst du Texte und Zahlen direkt
-bearbeiten und mit **Render** exportieren.
+bearbeiten und mit **Render** exportieren. Beim ersten Rendern lädt Remotion einmalig
+einen Headless-Chrome herunter (ca. 100 MB).
 
 Rendern über die Kommandozeile:
 
@@ -105,7 +106,8 @@ npm run render:all -- --feed --alpha
    ```
 
 6. **Hochladen.** Die MP4 ist H.264/AAC in 1080 × 1920, direkt für Reels und
-   LinkedIn geeignet. Für den LinkedIn-Feed gibt es jede Vorlage auch als `…-Feed` (4:5).
+   LinkedIn geeignet. Für den Feed gibt es die meisten Vorlagen und die Episode auch als
+   `…-Feed` (4:5), siehe Tabelle oben.
 
 **Textmarker:** In Headlines markierst du Wörter mit Sternchen: `"*jeder* Creator"`.
 
