@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {seeded} from '../brand/motion';
 import {C} from '../brand/tokens';
 
 /**
@@ -73,20 +74,25 @@ export const Backdrop: React.FC<{
   );
 };
 
-/** Feines, animiertes Filmkorn – macht Flächen hochwertiger. */
-export const Grain: React.FC<{opacity?: number}> = ({opacity = 0.07}) => {
+/**
+ * Feines, animiertes Filmkorn – macht Flächen hochwertiger.
+ * Eine vorberechnete Rausch-Kachel wird pro Frame zufällig verschoben
+ * (deutlich schneller als SVG-Rauschen in voller Auflösung).
+ */
+export const Grain: React.FC<{opacity?: number}> = ({opacity = 0.08}) => {
   const frame = useCurrentFrame();
-  const {width: W, height: H} = useVideoConfig();
-  const seed = frame % 12;
+  const r = seeded((frame % 24) + 0.37);
   return (
-    <AbsoluteFill style={{pointerEvents: 'none', mixBlendMode: 'overlay', opacity}}>
-      <svg width={W} height={H}>
-        <filter id={`grain-${seed}`} x="0" y="0" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves={2} seed={seed} stitchTiles="stitch" />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width={W} height={H} filter={`url(#grain-${seed})`} />
-      </svg>
-    </AbsoluteFill>
+    <AbsoluteFill
+      style={{
+        pointerEvents: 'none',
+        mixBlendMode: 'overlay',
+        opacity,
+        backgroundImage: `url(${staticFile('textures/grain.png')})`,
+        backgroundSize: '256px 256px',
+        backgroundPosition: `${Math.floor(r() * 256)}px ${Math.floor(r() * 256)}px`,
+        imageRendering: 'pixelated',
+      }}
+    />
   );
 };
