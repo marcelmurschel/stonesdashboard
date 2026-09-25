@@ -51,33 +51,56 @@ export const toWords = (captions: Caption[]): Caption[] => {
 type Page = {startMs: number; endMs: number; tokens: Array<{text: string; fromMs: number; toMs: number}>};
 
 /**
- * Seiten bilden wie ein Cutter: Umbruch nach Satzzeichen, nach Pausen,
- * bei zu vielen Wörtern oder Zeichen – nie mitten in einer kurzen Phrase.
+ * Seiten bilden wie ein Cutter: erst in Sinnabschnitte teilen (Satzzeichen,
+ * Pausen, manuelle Umbrüche), zu lange Abschnitte dann in gleich lange
+ * Stücke – so bleibt nie ein einzelnes Wort allein stehen.
  */
 export const paginate = (words: Caption[], maxWords = 4, maxChars = 26, gapMs = 450): Page[] => {
-  const pages: Page[] = [];
-  let cur: Page | null = null;
-  let chars = 0;
-  words.forEach((w, i) => {
-    const text = w.text.trim();
-    if (!text) return;
-    const prev = words[i - 1];
-    const breakBefore =
-      !cur ||
-      cur.tokens.length >= maxWords ||
-      chars + text.length + 1 > maxChars ||
-      (prev && w.startMs - prev.endMs > gapMs) ||
-      (prev && (prev.pageBreakAfter || /[.!?:;]$/.test(prev.text.trim())));
-    if (breakBefore) {
-      cur = {startMs: w.startMs, endMs: w.endMs, tokens: []};
-      pages.push(cur);
-      chars = 0;
+  const clean = words.filter((w) => w.text.trim());
+  // 1. Sinnabschnitte
+  const phrases: Caption[][] = [];
+  let cur: Caption[] = [];
+  clean.forEach((w, i) => {
+    const prev = clean[i - 1];
+    const brk =
+      cur.length > 0 &&
+      prev &&
+      (prev.pageBreakAfter || /[.!?:;,–]$/.test(prev.text.trim()) || w.startMs - prev.endMs > gapMs);
+    if (brk) {
+      phrases.push(cur);
+      cur = [];
     }
-    const page = cur as Page;
-    page.tokens.push({text, fromMs: w.startMs, toMs: w.endMs});
-    page.endMs = w.endMs;
-    chars += text.length + 1;
+    cur.push(w);
   });
+  if (cur.length) phrases.push(cur);
+
+  // 2. Zu lange Abschnitte ausgewogen teilen
+  const pages: Page[] = [];
+  for (const ph of phrases) {
+    const len = (ws: Caption[]) => ws.reduce((a, w) => a + w.text.trim().length + 1, -1);
+    const k = Math.max(1, Math.ceil(ph.length / maxWords), Math.ceil(len(ph) / maxChars));
+    const target = len(ph) / k;
+    let chunk: Caption[] = [];
+    const chunks: Caption[][] = [];
+    ph.forEach((w, i) => {
+      const remainingChunks = k - chunks.length;
+      const wouldBe = len([...chunk, w]);
+      const wordsLeft = ph.length - i;
+      if (chunk.length && remainingChunks > 1 && (wouldBe > target * 1.15 || chunk.length >= maxWords) && wordsLeft >= remainingChunks - 1) {
+        chunks.push(chunk);
+        chunk = [];
+      }
+      chunk.push(w);
+    });
+    if (chunk.length) chunks.push(chunk);
+    for (const c of chunks) {
+      pages.push({
+        startMs: c[0].startMs,
+        endMs: c[c.length - 1].endMs,
+        tokens: c.map((w) => ({text: w.text.trim(), fromMs: w.startMs, toMs: w.endMs})),
+      });
+    }
+  }
   return pages;
 };
 
